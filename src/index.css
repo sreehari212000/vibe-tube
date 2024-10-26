@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-scrollbar::-webkit-scrollbar {
+    height: 16px; /* Set height to display scrollbar buttons */
+    position: absolute;
+    top: 0;
+}
+.custom-scrollbar::-webkit-scrollbar-button {
+    width: 16px; /* Width of the buttons */
+    height: 16px; /* Height of the buttons */
+    /* background-color: #333; Background color of the */
+}
+
+/* Left arrow */
+.custom-scrollbar::-webkit-scrollbar-button:single-button:horizontal:decrement {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23333" class="bi bi-chevron-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M11.854 12.854a.5.5 0 0 1-.708 0L5.646 7.354a.5.5 0 0 1 0-.708l5.5-5.5a.5.5 0 1 1 .708.708L6.207 7l5.647 5.646a.5.5 0 0 1 0 .708z"/></svg>') no-repeat center;
+    cursor: pointer;
+}
+
+/* Right arrow */
+.custom-scrollbar::-webkit-scrollbar-button:single-button:horizontal:increment {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23333" class="bi bi-chevron-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.146 12.854a.5.5 0 0 0 .708 0L10.854 7.5a.5.5 0 0 0 0-.708l-6-6a.5.5 0 0 0-.708.708L9.293 7 4.146 12.146a.5.5 0 0 0 0 .708z"/></svg>') no-repeat center;
+    cursor: pointer;
+}
+
+/* Hide the track and thumb */
+.custom-scrollbar::-webkit-scrollbar-track,
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Makes the thumb and track invisible */
+}
