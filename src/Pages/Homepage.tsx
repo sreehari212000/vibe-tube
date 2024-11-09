@@ -2,28 +2,18 @@ import { useEffect, useState } from "react"
 import { fetchFromApi } from "../utils/fetchFromAPI"
 import FilterBrick from "../components/FilterBrick"
 import VideoCard from "../components/VideoCard"
+import {VIDEOTYPE} from "../utils/types"
 
 type FILTERSTYPE = {
     filter: string,
     continuation?: string
 }
-type VIDEOTYPE = {
-    type: string,
-    videoId: string,
-    viewCount: string,
-    title: string,
-    description: string,
-    channelId: string,
-    channelThumbnail: [{url: string, width: number, height:number}],
-    channelTitle: string,
-    thumbnail: [{url: string, width: number, height: number}],
-    publishedTimeText: string
-}
-
 export const Homepage = () => {
     const [filters, setFilters]  = useState<[] | FILTERSTYPE[]>([])
     const [videos, setVideos] = useState<[] | VIDEOTYPE[]>([])
     const [loading, setLoading] =  useState<Boolean>(true)
+
+    
     useEffect(()=>{
         fetchFromApi('home')
         .then((res)=>{

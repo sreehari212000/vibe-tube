@@ -33,7 +33,7 @@ const VideoCard = ({ title, videoId, viewCount, channelThumbnail, channelTitle, 
                     <img src={channelThumbnail ? channelThumbnail[0].url: DEADPOOL} alt="" className="w-8 rounded-full self-start"/>
                 </div>
                 <div>
-                    <p>{title}</p>
+                    <p>{title.length > 30 ? title.substring(0, 50) + "..." : title}</p>
                     <h3 className="text-sm text-gray-500">{channelTitle}</h3>
                     <div className="flex gap-3 text-sm text-gray-500">
                         <p>{formatNumber(Number(viewCount))} views</p>
